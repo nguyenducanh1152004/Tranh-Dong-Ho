@@ -433,7 +433,7 @@
   requestAnimationFrame(frame);
 
   // Mở trang: tờ vàng hoè được in một lần (khoảnh khắc duy nhất chạy theo thời gian).
-  const reveal = () => { document.body.classList.remove('is-loading'); requestAnimationFrame(() => document.body.classList.add('printed')); };
+  const reveal = () => { document.body.classList.remove('is-loading'); setTimeout(() => document.body.classList.add('printed'), 40); };
   Promise.race([document.fonts ? document.fonts.ready : Promise.resolve(), new Promise(r => setTimeout(r, 1200))]).then(reveal);
 
   let rt;

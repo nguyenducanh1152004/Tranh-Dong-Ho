@@ -513,3 +513,10 @@ dialog.inked .pd-cover .wc { --p: 1; }
   .hero { --print: 1; }
   .card { transform: none; }
 }
+
+/* ?still: ảnh tĩnh đã in xong (dùng để chụp ảnh xem trước khi chia sẻ link) */
+.still *, .still *::before, .still *::after { transition: none !important; animation: none !important; }
+.still .hero { --print: 1; }
+.still .hero .wc { --p: 1 !important; }
+.still .hero-name .ch, .still .hero-plate, .still .hero-status { transform: none !important; opacity: 1 !important; }
+.still .hero-seal .seal { opacity: 1; scale: 1; rotate: -4deg; }

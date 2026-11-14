@@ -35,6 +35,3 @@ Toàn bộ chữ nằm trong `dist/config.js`.
 
 Tôn trọng chế độ "giảm chuyển động" của hệ điều hành: mọi bản in hiện sẵn.
 
-## Trước khi deploy
-
-`dist/og-image.jpg` vẫn là ảnh của bản vũ trụ cũ; thay bằng ảnh chụp bản mới (1200×630).
