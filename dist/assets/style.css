@@ -48,11 +48,11 @@ ul, ol { padding: 0; list-style: none; }
 
 /* ---------- giấy, khung tranh ---------- */
 .grain {
-  position: fixed; inset: 0; z-index: 45; pointer-events: none; opacity: .32; mix-blend-mode: multiply;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='260' height='260'%3E%3Cfilter id='f'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 .42 0 0 0 0 .33 0 0 0 0 .2 0 0 0 .55 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23f)'/%3E%3C/svg%3E"),
-    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='600' height='600'%3E%3Cfilter id='g'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.012 .09' numOctaves='2'/%3E%3CfeColorMatrix values='0 0 0 0 .4 0 0 0 0 .3 0 0 0 0 .18 0 0 0 .35 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23g)'/%3E%3C/svg%3E");
+  /* vân giấy dó: một ô PNG nhỏ lặp lại, không bộ lọc, không trộn màu — nhẹ cho điện thoại */
+  position: fixed; inset: 0; z-index: 45; pointer-events: none; opacity: .85;
+  background: url("paper.png") 0 0 / 160px 160px repeat;
 }
-.on-dark .grain { opacity: .5; mix-blend-mode: soft-light; }
+.on-dark .grain { opacity: .45; }
 .sheet-frame {
   position: fixed; inset: var(--frame); z-index: 40; pointer-events: none;
   border: 5px solid var(--ink);
@@ -161,7 +161,7 @@ main { position: relative; }
 .hero-seal { position: absolute; z-index: 3; right: calc(var(--gx) + 10px); bottom: 150px; }
 .hero-seal .seal { --s: clamp(0, calc(var(--print) * 4 - 3), 1); opacity: var(--s); scale: calc(1.8 - var(--s) * .8); rotate: calc(-4deg - (1 - var(--s)) * 24deg); }
 .waves { position: absolute; left: 0; right: 0; bottom: 0; height: 170px; z-index: 2; pointer-events: none; }
-.wave-row { position: absolute; left: 0; bottom: calc((2 - var(--r)) * 44px); will-change: transform; }
+.wave-row { position: absolute; left: 0; bottom: calc((2 - var(--r)) * 44px); }
 .wave-row svg { height: 78px; width: auto; }
 .cue { position: absolute; left: 50%; bottom: 186px; translate: -50% 0; z-index: 3; font: 700 14px var(--display); opacity: calc(1 - var(--h) * 5); }
 .cue::after { content: ''; display: block; width: 3px; height: 34px; margin: 8px auto 0; background: var(--ink); transform-origin: top; animation: cue 2.2s var(--ease) infinite; }
@@ -297,7 +297,7 @@ main { position: relative; }
 .pin-head .title { margin-bottom: 0; }
 .pin-meta { font-weight: 600; font-variant-numeric: tabular-nums; padding-bottom: 8px; }
 .pin-count { font: 900 1.4rem var(--display); margin-right: 8px; }
-.track { display: flex; gap: 30px; width: max-content; padding: 0 var(--gx); will-change: transform; }
+.track { display: flex; gap: 30px; width: max-content; padding: 0 var(--gx); }
 .card {
   --dx: 0;
   width: clamp(290px, 29vw, 400px); flex: none;

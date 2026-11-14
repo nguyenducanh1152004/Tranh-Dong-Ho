@@ -294,10 +294,13 @@
   const papers = [{ rgb: hex(HERO_PAPER) }].concat(SECTIONS.map((s, i) => ({ rgb: hex(s.paper), el: sectionEls[i] })));
   papers.forEach(p => { p.dark = lum(p.rgb) < 0.2; });
 
-  let vh = innerHeight, vw = innerWidth, docH = 1, pinDist = 0, pinTop = 0;
+  let vh = innerHeight, vw = innerWidth, docH = 1, pinDist = 0, pinTop = 0, measured = false;
 
   function measure() {
-    vh = innerHeight; vw = innerWidth;
+    // Trên điện thoại thanh địa chỉ co giãn khi cuộn làm innerHeight đổi liên tục:
+    // chỉ nhận chiều cao mới khi đổi chiều rộng (xoay máy) hoặc chênh lệch lớn, để trang không giật.
+    if (innerWidth !== vw || Math.abs(innerHeight - vh) > 160 || !measured) vh = innerHeight;
+    vw = innerWidth; measured = true;
     pinDist = Math.max(0, track.scrollWidth - vw);
     const h = Math.round(pinDist + vh * 1.7);
     if (projectsEl.style.height !== h + 'px') projectsEl.style.height = h + 'px';
@@ -437,8 +440,12 @@
   Promise.race([document.fonts ? document.fonts.ready : Promise.resolve(), new Promise(r => setTimeout(r, 1200))]).then(reveal);
 
   let rt;
-  const remeasure = () => { clearTimeout(rt); rt = setTimeout(() => { measure(); update(sy); }, 80); };
-  addEventListener('resize', remeasure);
+  const remeasure = () => { clearTimeout(rt); rt = setTimeout(() => { measure(); update(sy); }, 120); };
+  let lastW = innerWidth, lastH = innerHeight;
+  addEventListener('resize', () => {
+    if (innerWidth === lastW && Math.abs(innerHeight - lastH) < 160) return; // chỉ là thanh địa chỉ co giãn
+    lastW = innerWidth; lastH = innerHeight; remeasure();
+  });
   new ResizeObserver(remeasure).observe($('main'));
   document.fonts && document.fonts.ready.then(remeasure);
 })();
