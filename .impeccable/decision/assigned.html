@@ -1,0 +1,28 @@
+<!doctype html><html lang="vi"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Đèn kéo quân</title>
+<style>
+body{margin:0;width:1440px;height:900px;overflow:hidden;background:#16133f;font-family:system-ui,sans-serif;color:#fff}
+.panels{position:absolute;inset:0;display:grid;grid-template-columns:repeat(6,1fr)}
+.panels i{display:block;opacity:.92}
+.panels i:nth-child(1){background:#e2283b}.panels i:nth-child(2){background:#ffc93c}.panels i:nth-child(3){background:#2fae5b}
+.panels i:nth-child(4){background:#d6337f}.panels i:nth-child(5){background:#ffc93c}.panels i:nth-child(6){background:#e2283b}
+.struts{position:absolute;inset:0;display:grid;grid-template-columns:repeat(6,1fr)}
+.struts i{border-right:14px solid #c9a35b;box-shadow:inset -14px 0 0 rgba(0,0,0,.15)}
+.ring{position:absolute;left:0;right:0;height:22px;background:#c9a35b}.ring.t{top:96px}.ring.b{bottom:0}
+nav{position:absolute;top:0;left:0;right:0;height:96px;background:#0b0a14;display:flex;align-items:center;justify-content:space-between;padding:0 56px}
+nav b{font-size:22px}nav span{margin-left:28px;font-size:16px;color:#ffc93c}
+.shadow{position:absolute;top:240px;left:-40px;width:1600px;height:520px;filter:blur(6px);opacity:.55}
+.shadow svg{width:100%;height:100%}
+h1{position:absolute;left:120px;top:300px;margin:0;font-size:200px;line-height:.9;letter-spacing:-.04em;color:#0b0a14}
+.card{position:absolute;left:120px;top:560px;width:560px;background:#0b0a14;padding:28px 32px}
+.card p{margin:0 0 18px;font-size:22px;line-height:1.45}.btn{display:inline-block;background:#ffc93c;color:#0b0a14;padding:16px 26px;font-weight:700;font-size:18px}
+.flame{position:absolute;right:220px;bottom:22px;width:90px;height:150px;border-radius:50% 50% 45% 45%;background:radial-gradient(#fff6c8,#ffc93c 55%,transparent 70%)}
+</style></head><body>
+<div class="panels"><i></i><i></i><i></i><i></i><i></i><i></i></div>
+<div class="shadow"><svg viewBox="0 0 1600 520"><g fill="#0b0a14"><circle cx="260" cy="120" r="70"/><rect x="190" y="200" width="150" height="230" rx="30"/><rect x="420" y="260" width="300" height="190" rx="12"/><rect x="900" y="160" width="140" height="290" rx="24"/><circle cx="1260" cy="300" r="120"/><rect x="1220" y="60" width="80" height="120"/></g></svg></div>
+<div class="struts"><i></i><i></i><i></i><i></i><i></i><i></i></div>
+<nav><b>ĐA · Đức Anh</b><div><span>Về mình</span><span>Kỹ năng</span><span>Dự án</span><span>Kinh nghiệm</span><span>Liên hệ</span></div></nav>
+<div class="ring t"></div><div class="ring b"></div>
+<h1>Đức<br>Anh</h1>
+<div class="card"><p>Full Stack Developer — mình biến ý tưởng thành sản phẩm web nhanh, đẹp và chạy ổn định.</p><span class="btn">Xem dự án →</span></div>
+<div class="flame"></div>
+</body></html>

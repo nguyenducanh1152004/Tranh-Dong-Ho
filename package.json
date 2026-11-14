@@ -1,0 +1,11 @@
+{
+  "name": "duc-anh-scroll-portfolio",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Portfolio Đức Anh — bản cuộn dài, camera bay qua từng hành tinh theo cuộn chuột",
+  "scripts": {
+    "start": "node scripts/serve.mjs",
+    "dev": "node scripts/serve.mjs",
+    "check": "node --check dist/config.js && node --check dist/assets/art.js && node --check dist/assets/app.js"
+  }
+}

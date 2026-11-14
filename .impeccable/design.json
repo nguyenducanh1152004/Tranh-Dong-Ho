@@ -1,0 +1,388 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-11-13T15:48:30+00:00",
+  "title": "Design System: Đức Anh",
+  "extensions": {
+    "colorMeta": {
+      "vang": {
+        "role": "tertiary",
+        "displayName": "Pagoda-Tree Yellow",
+        "canonical": "oklch(83.4% 0.158 89.0)",
+        "tonalRamp": [
+          "#170700",
+          "#352100",
+          "#573e00",
+          "#7b5c00",
+          "#a17d00",
+          "#c99f13",
+          "#f3c331",
+          "#ffe974"
+        ]
+      },
+      "hong": {
+        "role": "tertiary",
+        "displayName": "Lotus Pink",
+        "canonical": "oklch(68.0% 0.158 11.5)",
+        "tonalRamp": [
+          "#210004",
+          "#470a19",
+          "#702333",
+          "#9b3c4e",
+          "#c9576c",
+          "#f4798c",
+          "#ffa4b3",
+          "#ffcfdb"
+        ]
+      },
+      "xanh": {
+        "role": "tertiary",
+        "displayName": "Rice-Seedling Green",
+        "canonical": "oklch(77.4% 0.122 129.7)",
+        "tonalRamp": [
+          "#040f00",
+          "#1a2b03",
+          "#344a18",
+          "#506b30",
+          "#6e8f49",
+          "#8db463",
+          "#b1d887",
+          "#d8fdb3"
+        ]
+      },
+      "cham": {
+        "role": "secondary",
+        "displayName": "Indigo Plate",
+        "canonical": "oklch(34.8% 0.101 267.7)",
+        "tonalRamp": [
+          "#02042e",
+          "#111f52",
+          "#2b3e76",
+          "#4b5f94",
+          "#6e81b2",
+          "#92a4d1",
+          "#b8c9f1",
+          "#e0eeff"
+        ]
+      },
+      "son": {
+        "role": "primary",
+        "displayName": "Vermilion Seal Red",
+        "canonical": "oklch(55.3% 0.185 28.6)",
+        "tonalRamp": [
+          "#270000",
+          "#510000",
+          "#7e0c09",
+          "#ae2720",
+          "#d64e42",
+          "#f37d6e",
+          "#ffaa9c",
+          "#ffd6ca"
+        ]
+      },
+      "luc": {
+        "role": "secondary",
+        "displayName": "Leaf Green Plate",
+        "canonical": "oklch(53.4% 0.103 148.3)",
+        "tonalRamp": [
+          "#001100",
+          "#042e10",
+          "#1c4e27",
+          "#357040",
+          "#599262",
+          "#82b389",
+          "#acd6b1",
+          "#d7f9db"
+        ]
+      },
+      "den": {
+        "role": "neutral",
+        "displayName": "Bamboo-Charcoal Ink",
+        "canonical": "oklch(19.0% 0.009 59.1)",
+        "tonalRamp": [
+          "#0e0a08",
+          "#282421",
+          "#45413e",
+          "#64605d",
+          "#85817f",
+          "#a8a4a2",
+          "#ccc8c6",
+          "#f1eeec"
+        ]
+      },
+      "diep": {
+        "role": "neutral",
+        "displayName": "Dó Paper White",
+        "canonical": "oklch(95.6% 0.025 89.2)",
+        "tonalRamp": [
+          "#0d0b06",
+          "#27251e",
+          "#454239",
+          "#656157",
+          "#878276",
+          "#aaa597",
+          "#cfc9b9",
+          "#f5eedc"
+        ]
+      }
+    },
+    "typographyMeta": {
+      "display": {
+        "displayName": "Display",
+        "purpose": "The name on the hero sheet only."
+      },
+      "headline": {
+        "displayName": "Headline",
+        "purpose": "Section titles inside the caption box."
+      },
+      "title": {
+        "displayName": "Title",
+        "purpose": "Sub-headings within a section."
+      },
+      "numeral": {
+        "displayName": "Numeral",
+        "purpose": "Stats and highlights that count up with scroll; tabular figures."
+      },
+      "lead": {
+        "displayName": "Lead",
+        "purpose": "Opening paragraph of a section, 30-34ch, words ink in with scroll."
+      },
+      "body": {
+        "displayName": "Body",
+        "purpose": "Running text, 58-64ch; 16px on phones."
+      },
+      "label": {
+        "displayName": "Label",
+        "purpose": "Nav, buttons, years, FAQ questions (Phudu 700-800, 15-17px)."
+      }
+    },
+    "shadows": [
+      {
+        "name": "sheet-lift",
+        "value": "0 20px 34px -22px rgba(23, 19, 16, .55)",
+        "purpose": "Hanging scrolls and the contact form lying on a light paper."
+      },
+      {
+        "name": "sheet-lift-indigo",
+        "value": "0 22px 36px -18px rgba(5, 8, 25, .75)",
+        "purpose": "Project print cards on the indigo sheet."
+      },
+      {
+        "name": "dialog-lift",
+        "value": "0 30px 60px -24px rgba(0, 0, 0, .6)",
+        "purpose": "Project detail sheet over an rgba(23, 19, 16, .62) scrim."
+      },
+      {
+        "name": "plate-offset",
+        "value": "0 6px 0 -1px var(--son)",
+        "purpose": "Fixed misregistered red plate under the ink button and toast; 9px on hover, 2px on press."
+      },
+      {
+        "name": "double-rule",
+        "value": "inset 0 0 0 4px var(--paper), inset 0 0 0 7px var(--ink)",
+        "purpose": "Second rule of the caption box; the viewport frame uses 5px/7px (3px/5px on phones)."
+      }
+    ],
+    "motion": [
+      {
+        "name": "ease",
+        "value": "cubic-bezier(.16, 1, .3, 1)",
+        "purpose": "System ease for every state transition."
+      },
+      {
+        "name": "print-ease",
+        "value": "2.8s cubic-bezier(.3, .6, .2, 1)",
+        "purpose": "The single time-based moment: the hero sheet printing on load (--print 0 to 1). The dialog cover prints in 1.6s on the same curve."
+      },
+      {
+        "name": "scroll-progress",
+        "value": "--p = clamp((y + vh*start - top) / len); start .94, len .42vh by default",
+        "purpose": "Raw scroll progress written on every [data-r] element."
+      },
+      {
+        "name": "scroll-eased",
+        "value": "--e = 1 - (1 - p)^3",
+        "purpose": "Cubic ease-out of --p used by rise, slide, unroll, press and the title tilt."
+      },
+      {
+        "name": "plate-registration",
+        "value": "offset * (0.6 + (1 - l) * 5); key plate scale 1.08 to 1",
+        "purpose": "Woodcut plates converge from 5.6x to 0.6x their offset; the key plate presses last."
+      },
+      {
+        "name": "wheel-smoothing",
+        "value": "sy += (target - sy) * (1 - exp(-10 * dt))",
+        "purpose": "Smooths stepped wheel input so plates glide."
+      },
+      {
+        "name": "paper-crossfade",
+        "value": "smoothstep over [ts, te]; ink swaps over t 0.42-0.58",
+        "purpose": "Section paper and ink colours cross-fade with scroll."
+      },
+      {
+        "name": "verbs",
+        "value": "carve, rise (46px), slide (-54px), stamp (1.3, -7deg), pop (0.6, -10deg), unroll (clip), press (2.4, -36deg)",
+        "purpose": "The seven scroll entrance verbs."
+      },
+      {
+        "name": "reduced-motion",
+        "value": "--p = 1, --print = 1, transitions .01ms, no parallax or wave drift, no card arc, instant anchors",
+        "purpose": "Everything shown fully printed and still."
+      }
+    ],
+    "breakpoints": [
+      {
+        "name": "medium",
+        "value": "max-width: 1100px"
+      },
+      {
+        "name": "phone-or-portrait",
+        "value": "max-width: 760px, max-aspect-ratio: 4/5"
+      },
+      {
+        "name": "short-phone",
+        "value": "max-width: 760px and max-height: 700px"
+      }
+    ]
+  },
+  "components": [
+    {
+      "name": "Ink Button",
+      "kind": "button",
+      "refersTo": "button-ink",
+      "description": "Primary action: ink slab with a red plate printed out of register beneath it.",
+      "html": "<a class=\"ds-btn-ink\" href=\"#\">Xem dự án</a>",
+      "css": ".ds-btn-ink{display:inline-flex;align-items:center;justify-content:center;min-height:50px;padding:0 24px;font:800 17px 'Phudu','Be Vietnam Pro',sans-serif;letter-spacing:.01em;text-decoration:none;background:var(--den,#171310);color:var(--paper,#f2c230);box-shadow:0 6px 0 -1px var(--son,#c8352b);transition:transform .35s cubic-bezier(.16,1,.3,1),box-shadow .35s cubic-bezier(.16,1,.3,1)}.ds-btn-ink:hover{transform:translateY(-3px);box-shadow:0 9px 0 -1px var(--son,#c8352b)}.ds-btn-ink:active{transform:translateY(3px);box-shadow:0 2px 0 -1px var(--son,#c8352b)}.ds-btn-ink:focus-visible{outline:3px solid var(--son,#c8352b);outline-offset:3px}"
+    },
+    {
+      "name": "Line Button",
+      "kind": "button",
+      "refersTo": "button-line",
+      "description": "Secondary action: 3px ink outline that fills with ink on hover.",
+      "html": "<a class=\"ds-btn-line\" href=\"#\">Liên hệ</a>",
+      "css": ".ds-btn-line{display:inline-flex;align-items:center;justify-content:center;min-height:50px;padding:0 24px;font:800 17px 'Phudu','Be Vietnam Pro',sans-serif;letter-spacing:.01em;text-decoration:none;border:3px solid var(--den,#171310);color:var(--den,#171310);background:transparent;transition:background-color .3s,color .3s}.ds-btn-line:hover{background:var(--den,#171310);color:var(--vang,#f2c230)}.ds-btn-line:focus-visible{outline:3px solid var(--son,#c8352b);outline-offset:3px}"
+    },
+    {
+      "name": "Caption-Box Title",
+      "kind": "custom",
+      "refersTo": "title-box",
+      "description": "Section heading inside a double-ruled cartouche, like the inscription box of a folk print.",
+      "html": "<h2 class=\"ds-title\">Kỹ năng</h2>",
+      "css": ".ds-title{display:inline-block;margin:0;padding:.18em .38em .22em;font:900 clamp(2.8rem,6.6vw,5.6rem)/.95 'Phudu','Be Vietnam Pro',sans-serif;letter-spacing:-.03em;color:#171310;background:#9cc56f;border:4px solid #171310;box-shadow:inset 0 0 0 4px #9cc56f,inset 0 0 0 7px #171310}"
+    },
+    {
+      "name": "Seal",
+      "kind": "custom",
+      "refersTo": "seal",
+      "description": "Red square stamp with yellow carved letters, rotated -4deg; brand mark, step numbers, signature.",
+      "html": "<span class=\"ds-seal\"><span>ĐA</span></span>",
+      "css": ".ds-seal{display:inline-grid;place-items:center;width:56px;height:56px;background:#c8352b;color:#f2c230;font:900 22px/1 'Phudu',sans-serif;letter-spacing:-.02em;box-shadow:inset 0 0 0 5px #c8352b,inset 0 0 0 9px #f2c230;rotate:-4deg}.ds-seal span{translate:0 .04em}"
+    },
+    {
+      "name": "Chip",
+      "kind": "chip",
+      "refersTo": "chip",
+      "description": "Square tag with a 2px ink rule; dashed when provisional.",
+      "html": "<ul class=\"ds-chips\"><li>React</li><li>Node.js</li><li class=\"ds-chip-dash\">Rust</li></ul>",
+      "css": ".ds-chips{display:flex;flex-wrap:wrap;gap:8px;margin:0;padding:0;list-style:none}.ds-chips li{padding:5px 13px;border:2px solid #171310;color:#171310;font:600 15px 'Be Vietnam Pro',sans-serif}.ds-chips .ds-chip-dash{border-style:dashed}"
+    },
+    {
+      "name": "Print Card",
+      "kind": "card",
+      "refersTo": "print-card",
+      "description": "Project card: dó-paper sheet with a woodcut cover, 4px ink border and sheet-lift shadow.",
+      "html": "<button class=\"ds-card\"><span class=\"ds-card-cover\"></span><span class=\"ds-card-body\"><span class=\"ds-card-title\">Teamflow</span><span class=\"ds-card-text\">Không gian làm việc nhóm với Kanban.</span><span class=\"ds-card-more\">Xem chi tiết →</span></span></button>",
+      "css": ".ds-card{display:flex;flex-direction:column;width:320px;padding:0;text-align:left;background:#f7f0de;color:#171310;border:4px solid #171310;box-shadow:0 22px 36px -18px rgba(5,8,25,.75);cursor:pointer;transition:transform .5s cubic-bezier(.16,1,.3,1)}.ds-card:hover{transform:translateY(-8px) rotate(-1deg)}.ds-card:focus-visible{outline:3px solid #c8352b;outline-offset:3px}.ds-card-cover{display:block;height:150px;background:#9cc56f;border-bottom:4px solid #171310}.ds-card-body{display:flex;flex-direction:column;gap:6px;padding:18px 20px 20px}.ds-card-title{font:900 1.6rem/1.05 'Phudu',sans-serif}.ds-card-text{font:400 15.5px/1.5 'Be Vietnam Pro',sans-serif}.ds-card-more{font:800 16px 'Phudu',sans-serif;color:#c8352b;padding-top:12px}"
+    },
+    {
+      "name": "Text Field",
+      "kind": "input",
+      "refersTo": "input",
+      "description": "Square field with a 2px ink stroke; focus is a 3px seal-red ring.",
+      "html": "<label class=\"ds-field\"><span>Email</span><input class=\"ds-input\" type=\"email\" placeholder=\"ban@email.com\"></label>",
+      "css": ".ds-field{display:grid;gap:7px;font:700 15px 'Be Vietnam Pro',sans-serif;color:#171310}.ds-input{font:400 16px 'Be Vietnam Pro',sans-serif;color:#171310;width:100%;padding:12px 14px;border-radius:0;background:#fffaf0;border:2px solid #171310;transition:box-shadow .25s,border-color .25s}.ds-input:focus{outline:none;box-shadow:0 0 0 3px #c8352b}"
+    },
+    {
+      "name": "Section Nav",
+      "kind": "nav",
+      "refersTo": "nav-link",
+      "description": "Phudu labels with a diamond per section that fills seal red once printed; current item underlined.",
+      "html": "<nav class=\"ds-nav\"><a class=\"ds-done\" href=\"#\"><i></i><span>Về mình</span></a><a aria-current=\"true\" href=\"#\"><i></i><span>Kỹ năng</span></a><a href=\"#\"><i></i><span>Dự án</span></a></nav>",
+      "css": ".ds-nav{display:flex;gap:6px;padding:10px 16px 12px;background:#f2c230;border-bottom:3px solid #171310}.ds-nav a{display:flex;align-items:center;gap:9px;padding:8px 12px;font:700 16px 'Phudu',sans-serif;color:#171310;text-decoration:none}.ds-nav a i{position:relative;width:14px;height:14px;border:2px solid currentColor;rotate:45deg}.ds-nav a i::after{content:'';position:absolute;inset:1px;background:#c8352b;scale:0;transition:scale .5s cubic-bezier(.16,1,.3,1)}.ds-nav a.ds-done i::after,.ds-nav a[aria-current] i::after{scale:1}.ds-nav a span{background:linear-gradient(currentColor,currentColor) left bottom/0 3px no-repeat;padding-bottom:2px;transition:background-size .5s cubic-bezier(.16,1,.3,1)}.ds-nav a:hover span,.ds-nav a[aria-current] span{background-size:100% 3px}.ds-nav a:focus-visible{outline:3px solid #c8352b;outline-offset:3px}"
+    },
+    {
+      "name": "Hanging Scroll",
+      "kind": "card",
+      "refersTo": "",
+      "description": "Experience entry: dó sheet hung between two black rods, unrolled by scroll.",
+      "html": "<div class=\"ds-scroll\"><b>2023 — nay</b><h3>Full Stack Developer</h3><p>Mô tả công việc.</p></div>",
+      "css": ".ds-scroll{position:relative;padding:34px 40px 32px;background:#f7f0de;color:#171310;border:4px solid #171310;box-shadow:0 20px 34px -22px rgba(23,19,16,.55);font:400 16px/1.6 'Be Vietnam Pro',sans-serif}.ds-scroll::before,.ds-scroll::after{content:'';position:absolute;left:-14px;right:-14px;height:12px;background:#171310;border-radius:6px}.ds-scroll::before{top:-8px}.ds-scroll::after{bottom:-8px}.ds-scroll b{font:900 1.15rem 'Phudu',sans-serif;color:#c8352b}.ds-scroll h3{margin:4px 0;font:900 2rem/1.05 'Phudu',sans-serif}"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Đông Hồ Print Run",
+    "overview": "The page is a woodblock picture being printed as you read it. Each section is a sheet of dyed dó paper; each illustration is cut into flat colour plates that land slightly out of register and slide home as the reader scrolls, and the black key plate presses down last. Everything that moves is driven by scroll position, so scrolling back un-prints the sheet. Only one moment runs on a clock: the first yellow sheet printing itself once on load.\n\nThe surface is loud, flat and hand-made: saturated dye grounds, near-black charcoal ink, square edges, thick black rules, a double black frame around the whole viewport, caption boxes for headings and a red seal stamp for the signature. There is no gradient, no frosted glass, no glow. Depth comes from paper stacked on paper and from plates sitting off register, never from light. The former space and planet theme is retired and must not return.\n\nDensity is generous between sections (around a quarter of the viewport of air) and tight inside them, the way a print packs its picture and inscription into one frame.",
+    "keyCharacteristics": [
+      "One dyed paper per section, cross-faded by scroll; ink flips to light paper-white on the indigo sheet.",
+      "Flat colour plates with deliberate misregistration that converges, almost to register, at full progress.",
+      "A fixed double black frame around the viewport, like the border of a folk print.",
+      "Headings sit in double-ruled caption boxes; signatures and step numbers are red seals.",
+      "Phudu (heavy, capitals) for everything carved; Be Vietnam Pro for everything read.",
+      "All motion is scroll-scrubbed and reversible; reduced motion shows every sheet fully printed."
+    ],
+    "rules": [
+      {
+        "name": "The Dye-Per-Sheet Rule",
+        "body": "Each section owns exactly one paper colour, set on `--paper` and cross-faded by scroll (hero vang → about hong → skills xanh → projects cham → experience vang → contact hong). Never place two dyed papers side by side in the same viewport except mid-transition.",
+        "section": "colors"
+      },
+      {
+        "name": "The Ink Follows Paper Rule",
+        "body": "`--ink` is den on every light paper and diep on indigo; the swap happens in the middle of the paper cross-fade, and focus rings switch from son to vang on the dark sheet. A new dark paper must be added through the same luminance test (relative luminance under 0.2), not hand-coloured.",
+        "section": "colors"
+      },
+      {
+        "name": "The Stamp Not Ground Rule",
+        "body": "Seal red is for marks the size of a seal or smaller. It never fills a section, a card or a button face.",
+        "section": "colors"
+      },
+      {
+        "name": "The Carved And Read Rule",
+        "body": "Phudu is for things carved (names, titles, numbers, labels, buttons); Be Vietnam Pro is for things read. Never set a paragraph in Phudu.",
+        "section": "typography"
+      },
+      {
+        "name": "The Readable Once Reached Rule",
+        "body": "Text animation may hold words back, but at full scroll progress every word is at full opacity, and lead text never drops below 18% opacity even before it is reached.",
+        "section": "typography"
+      },
+      {
+        "name": "The Paper Not Light Rule",
+        "body": "Shadows are cast only by dó-paper sheets lying on the page. No glows, no coloured blur, no shadows on text, seals or illustrations.",
+        "section": "elevation"
+      },
+      {
+        "name": "The Register Rule",
+        "body": "Misregistration is driven by progress: plates start far off register (5.6× their offset) and converge as `--p` reaches 1, settling at a residual 0.6× so the print still looks hand-pulled. A fixed, unconverging plate is reserved for the ink button and the toast.",
+        "section": "elevation"
+      }
+    ],
+    "dos": [
+      "**Do** give each new section exactly one dyed paper from the palette and let the scroll engine cross-fade `--paper` and `--ink`.",
+      "**Do** build new illustrations as woodcut plates: flat fills from vang, hong, xanh, cham, son, luc, diep, with den outlines as the key plate printed last.",
+      "**Do** head every section with the caption-box title and drive its entrance from `--p` / `--e`, never from a timer.",
+      "**Do** use square corners and 2 / 3 / 4px black rules; turn small markers 45° into diamonds.",
+      "**Do** set carved text (names, titles, numbers, buttons) in Phudu and anything read in Be Vietnam Pro.",
+      "**Do** make every motion reversible by scrolling back, and show everything at full progress under reduced motion or without JavaScript.",
+      "**Do** mark provisional or sample content with a dashed border, never by hiding it."
+    ],
+    "donts": [
+      "**Don't** use gradients, frosted glass or glowing shadows anywhere.",
+      "**Don't** round corners; the scroll rod (6px) is the only curve.",
+      "**Don't** use seal red as a ground; it is for stamps, markers and the offset plate.",
+      "**Don't** add shadows to anything that is not a sheet of dó paper lying on the page.",
+      "**Don't** leave a plate more than its residual 0.6× offset at full progress, except the ink button's and toast's fixed red plate.",
+      "**Don't** set paragraphs in Phudu.",
+      "**Don't** bring back the space or planet theme in any form."
+    ]
+  }
+}
