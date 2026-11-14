@@ -1,5 +1,4 @@
 /* Thế giới: tranh khắc gỗ Đông Hồ. Giấy dó nhuộm, mực than lá tre, bản màu phẳng hơi lệch khuôn. */
-@property --p { syntax: '<number>'; inherits: true; initial-value: 0; }
 @property --print { syntax: '<number>'; inherits: true; initial-value: 0; }
 
 :root {
@@ -161,8 +160,7 @@ main { position: relative; }
 .hero-seal { position: absolute; z-index: 3; right: calc(var(--gx) + 10px); bottom: 150px; }
 .hero-seal .seal { --s: clamp(0, calc(var(--print) * 4 - 3), 1); opacity: var(--s); scale: calc(1.8 - var(--s) * .8); rotate: calc(-4deg - (1 - var(--s)) * 24deg); }
 .waves { position: absolute; left: 0; right: 0; bottom: 0; height: 170px; z-index: 2; pointer-events: none; }
-.wave-row { position: absolute; left: 0; bottom: calc((2 - var(--r)) * 44px); }
-.wave-row svg { height: 78px; width: auto; }
+.wave-row { position: absolute; left: 0; right: 0; height: 78px; bottom: calc((2 - var(--r)) * 44px); background-repeat: repeat-x; background-size: auto 100%; opacity: clamp(0, calc(var(--print) * 3 - var(--r) * .5), 1); }
 .cue { position: absolute; left: 50%; bottom: 186px; translate: -50% 0; z-index: 3; font: 700 14px var(--display); opacity: calc(1 - var(--h) * 5); }
 .cue::after { content: ''; display: block; width: 3px; height: 34px; margin: 8px auto 0; background: var(--ink); transform-origin: top; animation: cue 2.2s var(--ease) infinite; }
 @keyframes cue { 0% { scale: 1 0; } 60% { scale: 1 1; opacity: 1; } 100% { scale: 1 1; opacity: 0; } }
@@ -206,12 +204,12 @@ main { position: relative; }
 .w { display: inline-block; white-space: nowrap; overflow: clip; padding: .1em .02em .06em; margin: -.1em -.02em -.06em; vertical-align: bottom; }
 .title .ch {
   --l: clamp(0, calc((var(--p) * (var(--n) + 4) - var(--i)) / 4), 1);
-  display: inline-block; transform: translate3d(0, calc((1 - var(--l)) * 105%), 0);
+  display: inline-block; transform: translateY(calc((1 - var(--l)) * 105%));
 }
 .hero-name .ch { display: inline-block; }
 .lead .wd { opacity: clamp(.18, calc(var(--p) * (var(--n) + 4) - var(--i)), 1); }
-[data-r="rise"] { opacity: var(--e); transform: translate3d(0, calc((1 - var(--e)) * 46px), 0); }
-[data-r="slide"] { opacity: var(--e); transform: translate3d(calc((1 - var(--e)) * -54px), 0, 0); }
+[data-r="rise"] { opacity: var(--e); transform: translateY(calc((1 - var(--e)) * 46px)); }
+[data-r="slide"] { opacity: var(--e); transform: translateX(calc((1 - var(--e)) * -54px)); }
 [data-r="stamp"] {
   --s: clamp(0, calc(var(--p) * 1.6 - var(--d, 0) * .16), 1);
   opacity: clamp(0, calc(var(--s) * 2.4), 1);
@@ -299,9 +297,9 @@ main { position: relative; }
 .pin-count { font: 900 1.4rem var(--display); margin-right: 8px; }
 .track { display: flex; gap: 30px; width: max-content; padding: 0 var(--gx); }
 .card {
-  --dx: 0;
+  --dx: 0; --tx: 0px;
   width: clamp(290px, 29vw, 400px); flex: none;
-  transform: translateY(calc(var(--dx) * var(--dx) * 140px)) rotate(calc(var(--dx) * 5deg));
+  transform: translate(var(--tx), calc(var(--dx) * var(--dx) * 140px)) rotate(calc(var(--dx) * 5deg));
 }
 .card-btn {
   display: flex; flex-direction: column; width: 100%; height: 100%; text-align: left;
@@ -432,8 +430,9 @@ dialog[open] { animation: lay .6s var(--ease); }
 @keyframes lay { from { opacity: 0; transform: translateY(30px) rotate(-2deg); } }
 .dialog-close { position: absolute; top: 14px; right: 14px; z-index: 2; }
 .pd-cover { border-bottom: 5px solid var(--den); }
-.pd-cover .wc { width: 100%; height: auto; --p: 0; transition: --p 1.6s cubic-bezier(.3, .6, .2, 1); }
-dialog.inked .pd-cover .wc { --p: 1; }
+.pd-cover { --print: 0; transition: --print 1.6s cubic-bezier(.3, .6, .2, 1); }
+.pd-cover .wc { width: 100%; height: auto; --p: var(--print); }
+dialog.inked .pd-cover { --print: 1; }
 .pd-main { padding: 26px clamp(20px, 4vw, 44px) 36px; }
 .pd-main h3 { font: 900 clamp(2rem, 4vw, 2.8rem)/1 var(--display); margin-top: 6px; }
 .pd-tag { margin-top: 10px; font-size: 18px; font-weight: 500; }
@@ -479,8 +478,7 @@ dialog.inked .pd-cover .wc { --p: 1; }
   .hero-seal { right: 26px; bottom: 150px; }
   .hero-seal .seal-lg { width: 76px; height: 76px; font-size: 30px; }
   .waves { height: 130px; }
-  .wave-row { bottom: calc((2 - var(--r)) * 30px); }
-  .wave-row svg { height: 56px; }
+  .wave-row { bottom: calc((2 - var(--r)) * 30px); height: 56px; }
   .cue { display: none; }
   .sec { padding: 18vh var(--gx) 16vh; }
   .split { grid-template-columns: 1fr; }

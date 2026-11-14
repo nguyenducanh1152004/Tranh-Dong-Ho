@@ -348,8 +348,11 @@
     // đầu trang: cá chép nhảy lên, chữ và sóng trôi theo cuộn
     const hp = reduced ? 0 : clamp(y / (vh * 0.9));
     hero.style.setProperty('--h', hp.toFixed(4));
-    if (!reduced) waveRows.forEach((r, i) => { r.style.transform = `translate3d(${((i % 2 ? 1 : -1) * y * (0.18 + i * 0.07) - 80).toFixed(1)}px,${(hp * i * 14).toFixed(1)}px,0)`; });
-    if (!reduced) pars.forEach(p => { p.el.style.transform = `translate3d(0,${((y + vh / 2 - p.mid) * p.speed).toFixed(1)}px,0)`; });
+    if (!reduced) waveRows.forEach((r, i) => {
+      r.style.backgroundPositionX = `${((i % 2 ? 1 : -1) * y * (0.18 + i * 0.07) + i * 40).toFixed(1)}px`;
+      r.style.transform = `translate(0,${(hp * i * 14).toFixed(1)}px)`;
+    });
+    if (!reduced) pars.forEach(p => { p.el.style.transform = `translate(0,${((y + vh / 2 - p.mid) * p.speed).toFixed(1)}px)`; });
 
     // giấy nhuộm đổi màu theo mục; mực chuyển sáng khi sang tấm chàm
     let idx = 0, k = 1;
@@ -364,7 +367,7 @@
 
     // dự án: dãy bản in chạy ngang khi mục được ghim; bản nào vào giữa thì khớp khuôn
     const pp = clamp((y - pinTop - vh * 0.3) / Math.max(1, pinDist));
-    track.style.transform = `translate3d(${(-pp * pinDist).toFixed(1)}px,0,0)`;
+    const tx = (-pp * pinDist).toFixed(1) + 'px';
     pinBar.style.transform = `scaleX(${pp.toFixed(4)})`;
     let closest = 0, best = Infinity;
     const entry = clamp((y - (pinTop - vh * 0.6)) / (vh * 0.9));
@@ -374,6 +377,9 @@
       if (Math.abs(dx) < best) { best = Math.abs(dx); closest = i; }
       const print = reduced ? 1 : clamp(1 - Math.max(0, Math.abs(dx) - 0.12) * 2.2) * entry;
       c.style.setProperty('--p', print.toFixed(3));
+      // dịch từng thẻ thay vì cả dãy 4000px; thẻ ở xa ngoài màn hình thì không vẽ
+      c.style.setProperty('--tx', tx);
+      c.style.visibility = Math.abs(dx) > 1.3 ? 'hidden' : '';
       c.style.setProperty('--dx', reduced ? 0 : dx.toFixed(3));
     });
     pinCount.textContent = `${String(closest + 1).padStart(2, '0')} / ${String(cards.length).padStart(2, '0')}`;

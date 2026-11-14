@@ -56,14 +56,11 @@ window.Art = (() => {
 
   /* ---------- sóng nước: ba hàng vảy, mỗi hàng trôi một tốc độ ---------- */
   function waveBand() {
-    const rows = [0, 1, 2].map(r => {
-      const sh = [];
-      for (let x = -80; x < 1840; x += 80) {
-        sh.push(s('path', `d="M${x} 80 a40 40 0 0 1 80 0 Z"`, r % 2 ? C.luc : C.cham));
-        sh.push(s('path', `d="M${x + 16} 80 a24 24 0 0 1 48 0 M${x + 30} 80 a10 10 0 0 1 20 0"`, null));
-      }
-      return `<div class="wave-row" style="--r:${r}">${woodcut(sh, { viewBox: '0 36 1760 46', stroke: 4 })}</div>`;
-    }).join('');
+    // Mỗi hàng sóng là một ô SVG nhỏ lặp lại làm nền (rẻ cho bộ nhớ đồ họa trên điện thoại).
+    const tile = col => "url('data:image/svg+xml," + encodeURIComponent(
+      `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 36 80 46" width="80" height="46"><path d="M0 80 a40 40 0 0 1 80 0 Z" fill="${col}" stroke="${C.den}" stroke-width="4"/><path d="M16 80 a24 24 0 0 1 48 0 M30 80 a10 10 0 0 1 20 0" fill="none" stroke="${C.den}" stroke-width="4" stroke-linecap="round"/></svg>`
+    ) + "')";
+    const rows = [0, 1, 2].map(r => `<div class="wave-row" style="--r:${r};background-image:${tile(r % 2 ? C.luc : C.cham)}"></div>`).join('');
     return `<div class="waves" aria-hidden="true">${rows}</div>`;
   }
 
